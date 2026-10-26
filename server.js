@@ -87,7 +87,7 @@ const MODEL_MAPPING = {
   'google-lightest': 'meta/muse-glimmer-30b',
   'google-lighter': 'poolside/laguna-xs-2.1',
   'glm-5.3': 'z-ai/glm-5.3',
-  'glm-flash': 'z-ai/glm-5-3-flash',
+  'glm-flash': 'z-ai/glm-5.3-flash',
   'm3.1': 'minimaxai/minimax-m3.1-flash',
 
   // Vision-Modelle — nur Modelle, die erfolgreich auf Chat-Completions antworten.
@@ -465,8 +465,8 @@ app.post('/v1/chat/completions', async (req, res) => {
     const baseRequest = {
       ...forwardedFields,
       temperature: temperature ?? 0.7,
-      max_tokens: Math.min(max_tokens ?? 2048, MAX_TOKENS_LIMIT),
-      stream: stream || false
+      max_tokens: Math.min(max_tokens ?? 4096, MAX_TOKENS_LIMIT),
+      stream: stream || true
     };
 
     const { response, model: usedModel } = await callWithFallback(
