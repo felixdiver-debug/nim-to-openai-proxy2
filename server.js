@@ -87,7 +87,7 @@ const MODEL_MAPPING = {
   'google-lighter': 'poolside/laguna-xs-2.1',
   'glm-flash': 'z-ai/glm-5.3-flash',
   'm3.1': 'minimaxai/minimax-m3.1-flash',
-  'kimi': 'moonshotai/kimi-k3_1-pro',
+  'kimi': 'moonshotai/kimi-k3.1-pro',
   'mistral-large': 'mistralai/mistral-large-4-1t-a52b', // always the damn comma
 };
 
